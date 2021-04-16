@@ -22,7 +22,6 @@ app.get("/users", (req, res) => {
 
 app.get("/users/:id", (req, res) => {
     const user = User.getUserId(req.params.id);
-    console.log(user)
     user.length > 0?res.send(user):res.status(500).send({error: "Does not exist"})
 });
 
@@ -64,7 +63,6 @@ app.post("/users/adduser", (req, res) => {
 
 app.delete("/users/:id", (req, res) => {
     const user = User.removeUser(req.params.id)
-    console.log(user)
     res.send(user);
 });
 
