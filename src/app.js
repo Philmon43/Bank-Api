@@ -48,7 +48,7 @@ app.put("/users/transfer/:senderId/:recieverId", (req, res) => {
     const sender = User.decreaseAmount(req.params.senderId, req.body.amount);
     if (sender) {
         const reciever = User.increaseAmount(req.params.recieverId, req.body.amount);
-        res.send(reciever)
+        res.send(sender)
     }else {
         res.send({error: "You cant perform this action credit limit"})
     }

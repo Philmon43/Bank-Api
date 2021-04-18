@@ -30,7 +30,7 @@ module.exports = class User {
         const users = User.getAllusers();
         for (let i = 0; i < users.length; i++) {
             if (users[i].id === id) {
-                if (users[i].cash === 0 && users[i].credit < -499 || amount > users[i].cash && amount > users[i].credit) {
+                if (users[i].cash === 0 && users[i].credit < -499) {
                     return false
                 }
             
